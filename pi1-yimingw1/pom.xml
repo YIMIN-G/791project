@@ -3,6 +3,11 @@
   <groupId>org.lappsgrid</groupId>
   <artifactId>pi1-yimingw1</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <parent>
+    <artifactId>war-parent-pom</artifactId>
+    <groupId>org.lappsgrid.maven</groupId>
+    <version>2.0.5</version>
+  </parent>
   <dependencies>
   	<dependency>
   		<groupId>org.lappsgrid</groupId>
