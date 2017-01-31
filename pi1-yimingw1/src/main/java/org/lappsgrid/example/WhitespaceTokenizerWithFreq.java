@@ -119,7 +119,6 @@ public class WhitespaceTokenizerWithFreq implements ProcessingService
         }
         
         for (String word : words) {
-          if(map.get(word) == -1) continue;
             start = text.indexOf(word, start);
             if (start < 0) {
                 return new Data<String>(Uri.ERROR, "Unable to match word: " + word).asJson();
@@ -128,7 +127,6 @@ public class WhitespaceTokenizerWithFreq implements ProcessingService
             Annotation a = view.newAnnotation("tok" + (++id), Uri.TOKEN, start, end);
             a.addFeature(Features.Token.WORD, word);
             a.addFeature("WordFrequency", String.valueOf(map.get(word)));
-            map.put(word, -1);
         }
 
         // Step #6: Update the view's metadata. Each view contains metadata about the
